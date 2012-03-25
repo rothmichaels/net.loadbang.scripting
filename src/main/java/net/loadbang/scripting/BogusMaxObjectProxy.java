@@ -8,6 +8,7 @@ import java.util.List;
 import net.loadbang.scripting.util.exn.DataException;
 
 import com.cycling74.max.Atom;
+import com.cycling74.max.MaxBox;
 import com.cycling74.max.MaxObject;
 
 /**	An empty implementation of {@link MaxObjectProxy} which we can plug to make sure
@@ -27,6 +28,10 @@ public class BogusMaxObjectProxy implements MaxObjectProxy {
 	public boolean outletHigh(int i, Object arg) {
 		error("cannot outletHigh: MaxObject not available");
 		return false;
+	}
+	
+	public MaxBox getMaxBox()  {
+		return null;
 	}
 
 	public void post(String message) {

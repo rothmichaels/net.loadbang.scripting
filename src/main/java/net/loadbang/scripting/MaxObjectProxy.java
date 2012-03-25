@@ -8,6 +8,7 @@ import java.util.List;
 import net.loadbang.scripting.util.exn.DataException;
 
 import com.cycling74.max.Atom;
+import com.cycling74.max.MaxBox;
 
 /**	An interface representing a proxy for the enclosing MaxObject, so that we can unit test
 	the Groovy object against it, and so that it fits into the Groovy world more neatly.
@@ -21,6 +22,9 @@ public interface MaxObjectProxy {
 	
 	/**	A new high-priority outputter. */
 	boolean outletHigh(int i, Object arg);
+	
+	/** Returns the {@link MaxBox} for this proxy */
+	MaxBox getMaxBox();
 	
 	/**	Output console string. */
 	void post(String message);

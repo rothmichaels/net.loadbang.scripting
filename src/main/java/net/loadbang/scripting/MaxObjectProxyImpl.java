@@ -1,4 +1,4 @@
-//	$Id: MaxObjectProxyImpl.java,v 4320f78ad535 2011/05/08 20:13:27 nick $
+  //	$Id: MaxObjectProxyImpl.java,v 4320f78ad535 2011/05/08 20:13:27 nick $
 //	$Source: /Users/nick/workspace/MaxMSP/DEVELOPMENT_0/mxj-development/scripting/java/net/loadbang/scripting/MaxObjectProxyImpl.java,v $
 
 package net.loadbang.scripting;
@@ -10,6 +10,7 @@ import net.loadbang.scripting.util.Converters;
 import net.loadbang.scripting.util.exn.DataException;
 
 import com.cycling74.max.Atom;
+import com.cycling74.max.MaxBox;
 import com.cycling74.max.MaxObject;
 
 /**	A subclass of EnrichedMaxObject mainly to match a proxy interface, so that we
@@ -56,6 +57,13 @@ public class MaxObjectProxyImpl implements MaxObjectProxy {
 		Atom[] a = itsConverters.objectToAtoms(arg);
 		
 		return itsMaxObject.outletHigh(i, a);
+	}
+
+	/**
+	 * @see net.loadbang.scripting.MaxObjectProxy#getMaxBox()
+	 */
+	public MaxBox getMaxBox() {
+		return itsMaxObject.getMaxBox();
 	}
 
 	/**	The arguments attribute, made accessible to the scripting language
