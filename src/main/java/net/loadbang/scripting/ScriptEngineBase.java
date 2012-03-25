@@ -172,14 +172,14 @@ abstract public class ScriptEngineBase extends EnrichedMaxObject {
 	 	@param stem the script file name (sans extension)
 	 */
 
-	void setScript(String stem) {
+	protected void setScript(String stem) {
 		itsScript00 = stem;
 		establishScript(stem);
 	}
 	
 	/**	Get the script name. */
 	
-	String getScript() {
+	protected String getScript() {
 		if (itsScript00 == null) {
 			error("no script declared");
 			return Manifest.Strings.NONE;
