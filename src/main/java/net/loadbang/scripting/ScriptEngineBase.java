@@ -193,7 +193,7 @@ abstract public class ScriptEngineBase extends EnrichedMaxObject {
 		@param args the arguments
 	 */
 
-	void setArgs(Atom[] args) {
+	protected void setArgs(Atom[] args) {
 		try {
 			itsProxy.setupArgs(args);
 			itsArgs = args;
@@ -204,7 +204,7 @@ abstract public class ScriptEngineBase extends EnrichedMaxObject {
 	
 	/**	Return the arguments attribute. */
 
-	Atom[] getArgs() {
+	protected Atom[] getArgs() {
 		return itsArgs;
 	}
 	
